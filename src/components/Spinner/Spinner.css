@@ -1,0 +1,42 @@
+/* Spinner container */
+.spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    position: fixed; /* Ensures it stays centered even when content scrolls */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures it's above other content */
+  }
+  
+  .spinner {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+  }
+  
+  /* Spinner animation */
+  .spinner::after {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #ccc;
+    border-color: #ccc transparent #ccc transparent;
+    animation: spinner-animation 1.2s linear infinite;
+  }
+  
+  @keyframes spinner-animation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
